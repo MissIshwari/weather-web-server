@@ -10,7 +10,7 @@ searchForm.addEventListener('submit', (e) => {
     e.preventDefault()
     locationParagraph.textContent='Loading...'
     forecastParagraph.textContent=''
-    fetch('http://localhost:3000/weather?address=' + searchKey.value)
+    fetch('/weather?address=' + searchKey.value)
         .then((response) => {
             response.json().then((data) => {
                 if (data.error) {

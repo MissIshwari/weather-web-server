@@ -6,6 +6,7 @@ const express = require('express')
 const hbs = require('hbs')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 //Define path for express config
 const publicDir = path.join(__dirname, '../public')
@@ -56,9 +57,9 @@ app.get('/weather', (req, res) => {
                     }
                     else {
                         return res.send({
-                            forecast:data,
-                            location:location,
-                            address:req.query.address
+                            forecast: data,
+                            location: location,
+                            address: req.query.address
                         })
                     }
                 })
@@ -66,7 +67,7 @@ app.get('/weather', (req, res) => {
         })
     } else {
         res.send({
-            error:'Please provide an address.'
+            error: 'Please provide an address.'
         })
     }
 
@@ -89,6 +90,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up at port 3000.')
+app.listen(port, () => {
+    console.log('Server is up at port ' + port)
 })

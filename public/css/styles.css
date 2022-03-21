@@ -16,6 +16,7 @@ header{
 header a{
     color:#333333;
     text-decoration:none;
+    padding:5px;
 }
 h1{
     font-size:64px;
